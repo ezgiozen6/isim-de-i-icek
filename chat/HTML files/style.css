@@ -1,0 +1,143 @@
+body {
+  background-color: #FFF4F9;
+  color: rgb(0, 0, 0);
+    font-family: 'Oswald', sans-serif;
+}
+
+header {
+    background-image:url('pembe.png');
+    background-position: center;
+    background-size: 100% 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    text-align: center;
+    margin-top: 5px;
+}
+
+nav{
+    background-color: #C07D9D;
+    color: rgb(0, 0, 0);
+    font-family: 'Oswald', sans-serif;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #C07D9D;
+  padding: 20px 40px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 60px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-left: 60px;
+}
+
+.nav-links li {
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav-links a:hover {
+  opacity: 0.8;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.arrow {
+    font-size: 12px;
+}
+
+
+.get-started{
+  background-color: #A86887;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.get-started:hover{
+    background-color: #A46382;
+    transform: scale(1.05);
+}
+
+.gear-icon {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gear-icon:hover {
+  transform: scale(1.05);
+}
+
+h1 {
+  font-size: 80px;
+  padding: 15px;
+  color: #000
+}
+
+h2 {
+  font-size: 32px;
+  padding: 15px;
+  color: #000;
+  font-weight: 250;
+  margin-top: -50px;
+}
+
+.login{
+  background-color: #A86887;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.login:hover{
+    background-color: #A46382;
+    transform: scale(1.05);
+}
+
+h3 {
+  font-size: 20px;
+  padding: 15px;
+  text-transform: uppercase;
+  text-align: left;
+  margin-left: 20px;
+  font-weight: 500;
+  line-height: 2.7;
+  letter-spacing: 0.8px;
+}
+
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+  height: 800px;
+}
+
+
+.left {
+  width: 150px;
+}
