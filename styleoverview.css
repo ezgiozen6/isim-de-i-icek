@@ -240,7 +240,7 @@ h1 {
     color: white;
     text-decoration: none;
 }
-.connect-button :hover{
+.connect-button:hover{
   background-color: #A46382;
-  transform: scale(1.05);
+  transform: scale(1.15);
 }
