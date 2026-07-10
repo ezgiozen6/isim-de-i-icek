@@ -200,3 +200,42 @@ h3 {
   border-radius: 50%;
   object-fit: cover;
 }
+
+.pane-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 0 auto;            
+  width: fit-content;
+  margin: 50px;
+}
+
+
+.pane {
+  width: 170px;
+  height: 205px;
+  margin: 40px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  background: radial-gradient(circle at center, #ffffff 0%, #E1B6CB 70%);
+
+  display: flex;
+  align-items: center;     
+  justify-content: center;  
+  text-align: center;       
+  font-size: 36px;
+
+
+}
+.pane:nth-child(1) { transform: rotate(-18.96deg)  translateY(100px); }
+.pane:nth-child(2) { transform: rotate(-9.17deg) translateY(10px); }
+.pane:nth-child(3) { transform: rotate(0deg) translateY(-5px);  }  
+.pane:nth-child(4) { transform: rotate(9.17deg) translateY(10px); }
+.pane:nth-child(5) { transform: rotate(18.96deg) translateY(100px); }
+
+
+.pane:hover{
+    transform: scale(1.25);
+}
