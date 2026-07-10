@@ -1,23 +1,23 @@
 body {
   background-color: #FFF4F9;
   color: rgb(0, 0, 0);
-    font-family: 'Oswald', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 header {
-    background-image:url('pembe.png');
-    background-position: center;
-    background-size: 100% 100%;
-    height: 300px;
-    background-repeat: no-repeat;
-    text-align: center;
-    margin-top: 5px;
+  background-image:url('pembe.png');
+  background-position: center;
+  background-size: 100% 100%;
+  height: 300px;
+  background-repeat: no-repeat;
+  text-align: center;
+  margin-top: 5px;
 }
 
 nav{
-    background-color: #C07D9D;
-    color: rgb(0, 0, 0);
-    font-family: 'Oswald', sans-serif;
+  background-color: #C07D9D;
+  color: rgb(0, 0, 0);
+  font-family: 'Oswald', sans-serif;
 }
 
 .navbar {
@@ -104,6 +104,7 @@ h2 {
 
 .login{
   background-color: #A86887;
+  list-style: none;
   color: white;
   border: none;
   padding: 12px 24px;
@@ -114,9 +115,14 @@ h2 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
+.login a {
+  color: white;
+  text-decoration: none;
+}
+
 .login:hover{
-    background-color: #A46382;
-    transform: scale(1.05);
+  background-color: #A46382;
+  transform: scale(1.05);
 }
 
 h3 {
