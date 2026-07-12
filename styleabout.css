@@ -1,6 +1,6 @@
 body {
-background-color: #FFF4F9;
-color: rgb(0, 0, 0);
+  background-color: #FFF4F9;
+  color: rgb(0, 0, 0);
   font-family: 'Oswald', sans-serif;
 }
 
@@ -84,8 +84,6 @@ nav{
 .gear-icon:hover {
   transform: scale(1.05);
 }
-
-
 
 h1 {
   font-size: 72px;

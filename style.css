@@ -89,7 +89,7 @@ nav{
 }
 
 h1 {
-  font-size: 80px;
+  font-size: 72px;
   padding: 15px;
   color: #000
 }
@@ -227,7 +227,10 @@ h3 {
   text-align: center;       
   font-size: 36px;
 
-
+}
+.pane a{
+  color:#000;
+  text-decoration: none;
 }
 .pane:nth-child(1) { transform: rotate(-18.96deg)  translateY(100px); }
 .pane:nth-child(2) { transform: rotate(-9.17deg) translateY(10px); }
