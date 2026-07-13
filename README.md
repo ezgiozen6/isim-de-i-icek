@@ -62,11 +62,11 @@ Entities:
 ## System Architecture
 
   Client
-     │
+     ↓
 HTML / CSS / JavaScript
-     │
+     ↓
 Java Backend
-     │
+     ↓
 SQL Database
 
 ## Screenshots
