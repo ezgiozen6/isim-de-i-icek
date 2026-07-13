@@ -61,16 +61,7 @@ Entities:
 
 ## System Architecture
 
-  Client
-  
-     ↓
-HTML / CSS / JavaScript
-
-     ↓
-Java Backend
-
-     ↓
-SQL Database
+  Client ⟶ HTML / CSS / JavaScript ⟶ Java Backend ⟶ SQL Database
 
 ## Screenshots
 
