@@ -35,6 +35,7 @@ Developed by a team using HTML, CSS, SQL, JAVA, JAVASCRIPT.
 | JavaScript | Client-side functionality |
 | SQL        | Database                  |
 | Git        | Version Control           |
+
 ##Database
 SQL database is used in this website.
 Entities:
