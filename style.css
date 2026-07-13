@@ -15,6 +15,15 @@ header {
   margin-bottom: 50px;
 }
 
+.about {
+  height: 120px;
+  background-repeat: no-repeat;
+  text-align: left;
+  margin-top: 5px;
+  padding-left:50px;
+  margin-bottom: 50px;
+}
+
 nav{
   background-color: #C07D9D;
   color: rgb(0, 0, 0);
@@ -312,4 +321,204 @@ h3 {
 
 .features h2{
   text-align: left;
+}
+
+.persn-conn {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #f6dce8;
+  border-radius: 20px;
+  padding: 20px 30px;
+  min-height: 250px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin: 20px 40px;
+  transition: all 0.2s ease;
+  margin-bottom: 30px;
+
+}
+
+.persn-conn:hover{
+    transform: scale(1.05);
+    border: 1px solid rgba(179, 96, 137, 0.8);
+    box-shadow: 0 0 20px rgba(174, 111, 143, 0.6);
+}
+
+.persn-conn-right{
+  flex:1;
+  font-size: 24px;
+  text-align: center;
+  line-height: 1.6;
+  color: #000;
+  font-weight: 300;
+}
+
+.persn-conn-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.persn-conn-left {
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+}
+
+.chat{
+  background-color: rgb(234, 177, 206);
+  display: flex;
+  align-items: center;
+  gap: 20px; /*padding between kids*/
+  margin: 20px 40px;
+  border-radius: 20px;
+  padding: 20px 30px;
+  min-height: 250px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+  margin-bottom: 150px;
+
+}
+
+.chat-right{
+  flex:1;
+  font-size: 24px;
+  text-align: center;
+  line-height: 1.6;
+  color: #000;
+  font-weight: 300;
+}
+
+.chat-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.chat-left {
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+}
+
+.chat:hover{
+  transform: scale(1.05);
+  border: 1px solid rgba(179, 96, 167, 0.8);
+  box-shadow: 0 0 20px rgba(174, 111, 143, 0.6);
+}
+
+.blog{
+  background-color: rgb(203, 168, 208);
+  display: flex;
+  align-items: center;
+  gap: 20px; /*padding between kids*/
+  margin: 20px 40px;
+  border-radius: 20px;
+  padding: 20px 30px;
+  min-height: 250px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+  margin-bottom: 30px;
+
+}
+
+.blog-right{
+  flex:1;
+  font-size: 24px;
+  text-align: center;
+  line-height: 1.6;
+  color: #000;
+  font-weight: 300;
+}
+
+.blog-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.blog-left {
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+}
+
+.blog:hover{
+  transform: scale(1.05);
+  border: 1px solid rgba(179, 96, 176, 0.8);
+  box-shadow: 0 0 20px rgba(128, 82, 128, 0.6);
+}
+
+.connect-button {
+  background-color: #A86887;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin: 30px auto 0;
+  width: 250px;
+}
+
+.connect-button a{
+  color: white;
+  text-decoration: none;
+}
+.connect-button:hover{
+  background-color: #A46382;
+  transform: scale(1.15);
+}
+
+.aboutus {
+  display: flex;
+  align-items: center;
+  background-color: #F4E1EA;
+  gap: 20px;
+  background-color: #f6dce8;
+  border-radius: 20px;
+  padding: 20px 30px;
+  min-height: 250px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin: 20px 40px;
+}
+
+.aboutus-right{
+  flex:1;
+  font-size: 24px;
+  text-align: center;
+  line-height: 1.6;
+  color: #000;
+  font-weight: 300;
+}
+
+.aboutus-left {
+  order:-1;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.aboutus-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.contactus{
+  padding-left:50px;
+  margin-bottom: 100px;
 }
