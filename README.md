@@ -7,31 +7,37 @@ Developed by a team using HTML, CSS, SQL, JAVA, JAVASCRIPT.
 
 ### User Authentication
 
--User Registration
--Secure Login
+- User Registration
+
+- Secure Login
+
 -Email Based Profile Creation
 
 ### Journaling
 
--Sharing Blogs
--Editting/Deleting Blogs
--Viewing Others' Blogs
+- Sharing Blogs
+
+- Editting/Deleting Blogs
+
+- Viewing Others' Blogs
 
 ### Post Sharing
 
--Photo Uploading
--Viewing Others' Photos
--Displaying Photos on Profile
+- Photo Uploading
+
+- Viewing Others' Photos
+
+- Displaying Photos on Profile
 
 ### Real-Time Chat
 
--Messaging System
+- Messaging System
 
 ### Socialisation
 
--Follow/Unfollow users
--View user profiles
--View followings
+- Follow/Unfollow users
+- View user profiles
+- View followings
 
 ### Settings
 
