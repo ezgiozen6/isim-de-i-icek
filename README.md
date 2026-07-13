@@ -8,25 +8,19 @@ Developed by a team using HTML, CSS, SQL, JAVA, JAVASCRIPT.
 ### User Authentication
 
 - User Registration
-
 - Secure Login
-
--Email Based Profile Creation
+- Email-Based Profile Creation
 
 ### Journaling
 
 - Sharing Blogs
-
 - Editting/Deleting Blogs
-
 - Viewing Others' Blogs
 
 ### Post Sharing
 
 - Photo Uploading
-
 - Viewing Others' Photos
-
 - Displaying Photos on Profile
 
 ### Real-Time Chat
@@ -41,9 +35,9 @@ Developed by a team using HTML, CSS, SQL, JAVA, JAVASCRIPT.
 
 ### Settings
 
--Notifications
--Dark Mode
--Profile Changes
+- Notifications
+- Dark Mode
+- Profile Changes
 
 ## Technologies
 
@@ -60,19 +54,25 @@ Developed by a team using HTML, CSS, SQL, JAVA, JAVASCRIPT.
 
 SQL database is used in this website.
 Entities:
--Usernames
--Posts
--Followings
--Messages
+- Usernames
+- Posts
+- Followings
+- Messages
 
 ## System Architecture
 
   Client
+  
      │
+     
 HTML / CSS / JavaScript
+
      │
+     
 Java Backend
+
      │
+     
 SQL Database
 
 ## Screenshots
@@ -83,8 +83,8 @@ SQL Database
 
 ## Contributors
 
-Ezgi Özen
-Nazlı Işıl Koper
+- Ezgi Özen
+- Nazlı Işıl Koper
 
 ## Project Highlights
 
