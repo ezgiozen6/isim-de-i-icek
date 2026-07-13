@@ -8,10 +8,11 @@ header {
   background-image:url('pembe.png');
   background-position: center;
   background-size: 100% 100%;
-  height: 300px;
+  height: 350px;
   background-repeat: no-repeat;
   text-align: center;
   margin-top: 5px;
+  margin-bottom: 50px;
 }
 
 nav{
@@ -75,8 +76,8 @@ nav{
 }
 
 .get-started:hover{
-    background-color: #A46382;
-    transform: scale(1.05);
+  background-color: #A46382;
+  transform: scale(1.05);
 }
 
 .gear-icon {
@@ -95,11 +96,10 @@ h1 {
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 56px;
   padding: 15px;
   color: #000;
-  font-weight: 250;
-  margin-top: -50px;
+  text-align: center;
 }
 
 .login{
@@ -125,15 +125,21 @@ h2 {
   transform: scale(1.05);
 }
 
-h3 {
+h4 {
   font-size: 20px;
   padding: 15px;
-  text-transform: uppercase;
   text-align: left;
   margin-left: 20px;
   font-weight: 500;
   line-height: 2.7;
   letter-spacing: 0.8px;
+}
+
+h3 {
+  font-size: 32px;
+  padding: 15px;
+  color: #000;
+  font-weight: 250;
 }
 
 .container {
@@ -208,8 +214,8 @@ h3 {
   margin: 0 auto;            
   width: fit-content;
   margin: 50px;
+  margin-bottom:80px;
 }
-
 
 .pane {
   width: 170px;
@@ -228,6 +234,7 @@ h3 {
   font-size: 36px;
 
 }
+
 .pane a{
   color:#000;
   text-decoration: none;
@@ -238,7 +245,71 @@ h3 {
 .pane:nth-child(4) { transform: rotate(9.17deg) translateY(10px); }
 .pane:nth-child(5) { transform: rotate(18.96deg) translateY(100px); }
 
-
 .pane:hover{
-    transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+.home-features {
+  display: flex;
+  align-items: center;
+  background-color: #F4E1EA;
+  gap: 20px;
+  background-color: #f6dce8;
+  border-radius: 20px;
+  padding: 20px 30px;
+  min-height: 250px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin: 20px 40px;
+  margin-top: 40px;
+  margin-bottom: 150px;
+}
+
+.home-features-right{
+  flex:1;
+  font-size: 24px;
+  text-align: center;
+  line-height: 1.6;
+  color: #000;
+  font-weight: 300;
+}
+
+.home-features-right button{
+  background-color: #A86887;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.home-features-right button a{
+  text-decoration: none;
+  color:#ffffff;
+}
+
+.home-features-right button:hover{
+  background-color: #A46382;
+  transform: scale(1.05);
+}
+
+.home-features-left {
+  order:-1;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.home-features-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.features h2{
+  text-align: left;
 }
