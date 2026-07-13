@@ -1,41 +1,46 @@
-# isim-de-i-icek
-değiştiririz
+# Our Website
 
-##Overview
 A full stack social network platform where users will be able to blog, share photos, and communicate with each other by real-time chatting.
 Developed by a team using HTML, CSS, SQL, JAVA, JAVASCRIPT.
 
-##Features
+## Features
 
-###User Authentication
+### User Authentication
+
 -User Registration
 -Secure Login
 -Email Based Profile Creation
 
-###Journaling
+### Journaling
+
 -Sharing Blogs
 -Editting/Deleting Blogs
 -Viewing Others' Blogs
 
-###Post Sharing
+### Post Sharing
+
 -Photo Uploading
 -Viewing Others' Photos
 -Displaying Photos on Profile
 
-###Real-Time Chat
+### Real-Time Chat
+
 -Messaging System
 
-###Socialisation
+### Socialisation
+
 -Follow/Unfollow users
 -View user profiles
 -View followings
 
-###Settings
+### Settings
+
 -Notifications
 -Dark Mode
 -Profile Changes
 
-##Technologies
+## Technologies
+
 | Technology | Purpose                   |
 | ---------- | ------------------------- |
 | Java       | Backend                   |
@@ -45,7 +50,8 @@ Developed by a team using HTML, CSS, SQL, JAVA, JAVASCRIPT.
 | SQL        | Database                  |
 | Git        | Version Control           |
 
-##Database
+## Database
+
 SQL database is used in this website.
 Entities:
 -Usernames
@@ -53,7 +59,8 @@ Entities:
 -Followings
 -Messages
 
-##System Architecture
+## System Architecture
+
   Client
      │
 HTML / CSS / JavaScript
@@ -62,16 +69,17 @@ Java Backend
      │
 SQL Database
 
-##Screenshots
+## Screenshots
 
-##Installation
+## Installation
 
-##Future Improvments
+## Future Improvments
 
-##Contributors
+## Contributors
+
 Ezgi Özen
 Nazlı Işıl Koper
 
-##Project Highlights
+## Project Highlights
 
 
