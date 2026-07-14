@@ -547,7 +547,6 @@ h3 {
   align-self: center;
   align-items: center;
   display: flex;
-  align-items: center;     
   justify-content: center;  
   text-align: center;       
   font-size: 36px;
@@ -570,13 +569,13 @@ h3 {
     opacity: 0;
     transform: translateY(50px) scale(0.85);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    filter: blur(1px);
+    /* filter: blur(1px); */
   }
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
     box-shadow: 0 0 0px;
-    filter: blur(0);
+    /* filter: blur(0); */
   }
 }
 
@@ -587,4 +586,21 @@ h3 {
     transform: none;
     filter: none;
   }
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.less-bottom-margin{
+  margin-bottom: -30px;
+}
+
+.more-bottom-margin{
+  margin-bottom: 40px;
+}
+
+.centered-item{
+  margin: 1px auto;
+  display: flex;
 }
