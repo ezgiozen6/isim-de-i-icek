@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
@@ -32,7 +33,7 @@ public class BlogController {
         });
     }
 
-    @GetMapping("api/blogs/{id}")
+    @GetMapping("/api/blogs/{id}")
     public Blog getById(@PathVariable Long id){
         String sql = "SELECT * FROM blogs WHERE id = ?";
 
@@ -45,6 +46,9 @@ public class BlogController {
             return blog;
         }, id);
 
+        if(blogList.isEmpty()){
+            return null;
+        }
         return blogList.get(0);
     }
 
@@ -55,11 +59,19 @@ public class BlogController {
         return "blog created succesfully";
     }
 
-    @DeleteMapping("api/blogs/{id}")
+    @DeleteMapping("/api/blogs/{id}")
     public String delete(@PathVariable Long id){
         String sql = "DELETE FROM blogs WHERE id = ?";
         jdbcTemplate.update(sql, id);
-        return "deleted photo";
+        return "deleted blog";
+    }
+
+    //users may need to update the content o yüzden ekledim 
+    @PutMapping("/api/blogs/{id}")
+    public String update(@PathVariable Long id, @RequestBody Blog updatedBlog){
+        String sql = "UPDATE blogs SET content = ?, date = ? WHERE id = ?";
+        jdbcTemplate.update(sql, updatedBlog.getContent(), updatedBlog.getDate(), id);
+        return "blog updated";
     }
 
 }
