@@ -1,15 +1,15 @@
 package com.loremipsum.demo;
 
-public class Follows {
+public class Follow {
     //instances
     private Long followerId;
     private Long followedId;
 
-    public Long getfollowerId(){
+    public Long getFollowerId(){
         return this.followerId;
     }
 
-    public Long followedId(){
+    public Long getFollowedId(){
         return this.followedId;
     }
 
