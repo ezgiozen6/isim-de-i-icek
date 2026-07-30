@@ -1,7 +1,9 @@
 package com.loremipsum.demo;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -67,6 +69,14 @@ public class FollowController {
             return "followed already";
         }
 
+    }
+
+    @DeleteMapping("/api/follows/{followerId}/{followedId}")
+    public String unFollow(@PathVariable Long followedId, @PathVariable Long followerId){
+        String sql = "DELETE FROM follows WHERE follower_id = ? AND followed_id = ?";
+        jdbcTemplate.update(sql, followerId, followedId);
+
+        return "deleted follow";
     }
 
 
