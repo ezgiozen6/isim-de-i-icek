@@ -47,7 +47,7 @@ public class MessagesController {
             message.setContent(resultSet.getString("content"));
             message.setDate(resultSet.getString("date"));
             return message;
-        });
+        }, id);
 
         if(messageList.isEmpty()){
             return null;
