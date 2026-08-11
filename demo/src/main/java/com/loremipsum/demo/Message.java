@@ -1,6 +1,6 @@
 package com.loremipsum.demo;
 
-public class Messages {
+public class Message {
 
     //instance variables
     private Long id;
