@@ -3,22 +3,22 @@ package com.loremipsum.demo;
 public class Message {
 
     //instance variables
-    private Long id;
-    private Long sender_id;
-    private Long receiver_id;
+    private int id;
+    private int sender_id;
+    private int receiver_id;
     private String content;
     private String date;
 
     //Getter and Setters
-    public Long getId(){
+    public int getId(){
         return this.id;
     }
 
-    public Long getSenderId(){
+    public int getSenderId(){
         return this.sender_id;
     }
 
-    public Long getReceiverId(){
+    public int getReceiverId(){
         return this.receiver_id;
     }
 
@@ -30,15 +30,15 @@ public class Message {
         return this.date;
     }
 
-    public void setId(Long newId){
+    public void setId(int newId){
         this.id = newId;
     }
 
-    public void setSenderId(Long newSenderId){
+    public void setSenderId(int newSenderId){
         this.sender_id = newSenderId;
     }
 
-    public void setReceiverId(Long newReceiverId){
+    public void setReceiverId(int newReceiverId){
         this.receiver_id = newReceiverId;
     }
 

@@ -25,8 +25,8 @@ public class NotificationsController {
 
         return jdbcTemplate.query (sql, (resultSet, rowNum) -> {
             Notifications notification= new Notifications();
-            notification.setId(resultSet.getLong("id"));
-            notification.setUserId(resultSet.getLong("user_id"));
+            notification.setId(resultSet.getInt("id"));
+            notification.setUserId(resultSet.getInt("user_id"));
             notification.setNotification(resultSet.getString("notification"));
             notification.setIsRead(resultSet.getBoolean("is_read"));
             return notification;
@@ -34,14 +34,14 @@ public class NotificationsController {
     }
 
     @GetMapping("/api/notifications/{id}")
-    public Notifications getById(@PathVariable Long id){
+    public Notifications getById(@PathVariable int id){
 
         String sql = "SELECT * FROM notifications WHERE id= ?";
 
         List<Notifications> notifList = jdbcTemplate.query (sql, (resultSet,rowNum) -> {
             Notifications notification= new Notifications();
-            notification.setId(resultSet.getLong("id"));
-            notification.setUserId(resultSet.getLong("user_id"));
+            notification.setId(resultSet.getInt("id"));
+            notification.setUserId(resultSet.getInt("user_id"));
             notification.setNotification(resultSet.getString("notification"));
             notification.setIsRead(resultSet.getBoolean("is_read"));
             return notification;
@@ -56,7 +56,7 @@ public class NotificationsController {
     }
 
     @PutMapping("/api/notifications/{id}")
-    public String updateIsRead(@PathVariable Long id, @RequestBody Notifications update){
+    public String updateIsRead(@PathVariable int id, @RequestBody Notifications update){
 
         String sql = "UPDATE notifications SET is_read = ? WHERE id = ?";
 
@@ -76,7 +76,7 @@ public class NotificationsController {
     }
 
     @DeleteMapping("/api/notifications/{id}")
-    public String deleteNotification(@PathVariable Long id){
+    public String deleteNotification(@PathVariable int id){
 
         String sql = "DELETE FROM notifications WHERE id= ?";
 

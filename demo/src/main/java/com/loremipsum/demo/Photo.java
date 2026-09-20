@@ -2,16 +2,16 @@ package com.loremipsum.demo;
 
 public class Photo {
     //instances
-    private Long id;
-    private Long user_id;
+    private int id;
+    private int user_id;
     private String date;
     private String url;
 
-    public Long getId(){
+    public int getId(){
         return this.id;
     }
 
-    public Long getUserId(){
+    public int getUserId(){
         return this.user_id;
     }
 
@@ -23,11 +23,11 @@ public class Photo {
         return this.url;
     }
 
-    public void setId(Long newId){
+    public void setId(int newId){
         this.id = newId;
     }
 
-    public void setUserId(Long newUserId){
+    public void setUserId(int newUserId){
         this.user_id = newUserId;
     }
 

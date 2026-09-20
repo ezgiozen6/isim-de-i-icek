@@ -2,16 +2,16 @@ package com.loremipsum.demo;
 
 public class Blog {
     //instances
-    private Long id;
-    private Long userId;
+    private int id;
+    private int userId;
     private String content;
     private String date;
 
-    public Long getId(){
+    public int getId(){
         return this.id;
     }
 
-    public Long getUserId(){
+    public int getUserId(){
         return this.userId;
     }
 
@@ -23,11 +23,11 @@ public class Blog {
         return this.date;
     }
 
-    public void setId(Long newId){
+    public void setId(int newId){
         this.id = newId;
     }
 
-    public void setUserId(Long newUserId){
+    public void setUserId(int newUserId){
         this.userId = newUserId;
     }
 

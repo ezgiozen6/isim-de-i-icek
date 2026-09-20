@@ -25,8 +25,8 @@ public class BlogController {
 
         return jdbcTemplate.query(sql, (resultset, rownum) -> {
             Blog blog = new Blog();
-            blog.setId(resultset.getLong("id"));
-            blog.setUserId(resultset.getLong("user_id"));
+            blog.setId(resultset.getInt("id"));
+            blog.setUserId(resultset.getInt("user_id"));
             blog.setContent(resultset.getString("content"));
             blog.setDate(resultset.getString("date"));
             return blog;
@@ -34,13 +34,13 @@ public class BlogController {
     }
 
     @GetMapping("/api/blogs/{id}")
-    public Blog getById(@PathVariable Long id){
+    public Blog getById(@PathVariable int id){
         String sql = "SELECT * FROM blogs WHERE id = ?";
 
         List<Blog> blogList = jdbcTemplate.query(sql, (resultset, rownum) -> {
             Blog blog = new Blog();
-            blog.setId(resultset.getLong("id"));
-            blog.setUserId(resultset.getLong("user_id"));
+            blog.setId(resultset.getInt("id"));
+            blog.setUserId(resultset.getInt("user_id"));
             blog.setContent(resultset.getString("content"));
             blog.setDate(resultset.getString("date"));
             return blog;
@@ -60,7 +60,7 @@ public class BlogController {
     }
 
     @DeleteMapping("/api/blogs/{id}")
-    public String delete(@PathVariable Long id){
+    public String delete(@PathVariable int id){
         String sql = "DELETE FROM blogs WHERE id = ?";
         jdbcTemplate.update(sql, id);
         return "deleted blog";
@@ -68,7 +68,7 @@ public class BlogController {
 
     //users may need to update the content o yüzden ekledim 
     @PutMapping("/api/blogs/{id}")
-    public String update(@PathVariable Long id, @RequestBody Blog updatedBlog){
+    public String update(@PathVariable int id, @RequestBody Blog updatedBlog){
         String sql = "UPDATE blogs SET content = ?, date = ? WHERE id = ?";
         jdbcTemplate.update(sql, updatedBlog.getContent(), updatedBlog.getDate(), id);
         return "blog updated";

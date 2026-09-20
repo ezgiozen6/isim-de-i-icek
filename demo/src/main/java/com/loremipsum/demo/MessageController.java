@@ -85,7 +85,7 @@ public class MessageController {
 
         jdbcTemplate.update(sql, aMessage.getSenderId(), aMessage.getReceiverId(), aMessage.getContent(), Instant.now().toString());
         messagingTemplate.convertAndSendToUser(
-            aMessage.getReceiverId().toString(),
+            String.valueOf(aMessage.getReceiverId()),
             "/queue/messages",
             aMessage
         );

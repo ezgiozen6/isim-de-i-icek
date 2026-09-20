@@ -24,8 +24,8 @@ public class PhotoController {
 
         return jdbcTemplate.query(sql, (resultset, rownum) -> {
             Photo photo = new Photo();
-            photo.setId(resultset.getLong("id"));
-            photo.setUserId(resultset.getLong("user_id"));
+            photo.setId(resultset.getInt("id"));
+            photo.setUserId(resultset.getInt("user_id"));
             photo.setUrl(resultset.getString("url"));
             photo.setDate(resultset.getString("date"));
             return photo;
@@ -33,13 +33,13 @@ public class PhotoController {
     }
 
     @GetMapping("/api/photos/{id}")
-    public Photo getById(@PathVariable Long id){
+    public Photo getById(@PathVariable int id){
         String sql = "SELECT * FROM photos WHERE id = ?";
 
         List<Photo> photoList = jdbcTemplate.query(sql, (resultset, rownum) -> {
             Photo photo = new Photo();
-            photo.setId(resultset.getLong("id"));
-            photo.setUserId(resultset.getLong("user_id"));
+            photo.setId(resultset.getInt("id"));
+            photo.setUserId(resultset.getInt("user_id"));
             photo.setUrl(resultset.getString("url"));
             photo.setDate(resultset.getString("date"));
             return photo;
@@ -63,7 +63,7 @@ public class PhotoController {
     }
 
     @DeleteMapping("/api/photos/{id}")
-    public String deletePhoto(@PathVariable Long id){
+    public String deletePhoto(@PathVariable int id){
         String sql = "DELETE FROM photos WHERE id = ?";
 
         jdbcTemplate.update(sql, id);

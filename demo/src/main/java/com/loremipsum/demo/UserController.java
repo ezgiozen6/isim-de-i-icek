@@ -25,19 +25,19 @@ public class UserController {
 
         return jdbcTemplate.query(userSql, (resultset, rowNum) -> {
             User user = new User();
-            user.setId(resultset.getLong("id"));
+            user.setId(resultset.getInt("id"));
             user.setMail(resultset.getString("mail"));
             return user;
         });
     }
 
     @GetMapping("/api/users/{id}")
-    public User getUserById(@PathVariable Long id){
+    public User getUserById(@PathVariable int id){
         String getUserSql = "SELECT id, mail FROM users WHERE id = ?";
 
         List<User> resultUser = jdbcTemplate.query(getUserSql, (resultset, rownum) ->{
             User user = new User();
-            user.setId(resultset.getLong("id"));
+            user.setId(resultset.getInt("id"));
             user.setMail(resultset.getString("mail"));
             return user;
         }, id);
@@ -55,14 +55,14 @@ public class UserController {
     }
 
     @DeleteMapping("/api/users/{id}")
-    public String deleteUser(@PathVariable Long id){
+    public String deleteUser(@PathVariable int id){
         String sql = "DELETE FROM users WHERE id = ?";
         jdbcTemplate.update(sql, id);
         return "OOPS U DELETED A USER";
     }
 
     @PutMapping("/api/users/{id}")
-    public String updateMail(@PathVariable Long id, @RequestBody User updatedUser){
+    public String updateMail(@PathVariable int id, @RequestBody User updatedUser){
         String updateSql = "UPDATE users SET mail = ? WHERE id = ?";
         jdbcTemplate.update(updateSql, updatedUser.getMail(), id);
         return "YAY U UPDATED UR USER MAIL";

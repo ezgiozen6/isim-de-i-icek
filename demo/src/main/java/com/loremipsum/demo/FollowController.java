@@ -20,12 +20,12 @@ public class FollowController {
 
     //kullanıcı KİMLERİ takip ediyor
     @GetMapping("/api/follows/following")
-    public List<Follow> getFollows(@RequestParam Long followerId){
+    public List<Follow> getFollows(@RequestParam int followerId){
         String sql = "SELECT * FROM follows WHERE follower_id = ?";
 
         return jdbcTemplate.query(sql, (resultset, rownum) ->{
             Follow follow = new Follow();
-            follow.setFollowedId(resultset.getLong("followed_id"));
+            follow.setFollowedId(resultset.getInt("followed_id"));
             follow.setFollowerId(followerId);
             return follow;
         }, followerId);
@@ -33,13 +33,13 @@ public class FollowController {
 
     //kullanıcıyı kimler takip ediyor
     @GetMapping("/api/follows/followers")
-    public List<Follow> getFollowing(@RequestParam Long followedId){
+    public List<Follow> getFollowing(@RequestParam int followedId){
         String sql = "SELECT * FROM follows WHERE followed_id = ?";
 
         return jdbcTemplate.query(sql, (resultset, rownum) -> {
             Follow follow = new Follow();
             follow.setFollowedId(followedId);
-            follow.setFollowerId(resultset.getLong("follower_id"));
+            follow.setFollowerId(resultset.getInt("follower_id"));
             return follow;
         }, followedId);
     }
@@ -48,7 +48,7 @@ public class FollowController {
     public String createFollow(@RequestBody Follow newFollow){
         String sql = "SELECT * FROM follows WHERE followed_id = ? AND follower_id = ?";
 
-        if(newFollow.getFollowedId().equals(newFollow.getFollowerId())){
+        if(newFollow.getFollowedId()==(newFollow.getFollowerId())){
             return "cant follow urself";
         }
 
@@ -72,7 +72,7 @@ public class FollowController {
     }
 
     @DeleteMapping("/api/follows/{followerId}/{followedId}")
-    public String unFollow(@PathVariable Long followedId, @PathVariable Long followerId){
+    public String unFollow(@PathVariable int followedId, @PathVariable int followerId){
         String sql = "DELETE FROM follows WHERE follower_id = ? AND followed_id = ?";
         jdbcTemplate.update(sql, followerId, followedId);
 

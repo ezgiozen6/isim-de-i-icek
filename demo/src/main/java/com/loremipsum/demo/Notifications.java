@@ -3,17 +3,17 @@ package com.loremipsum.demo;
 public class Notifications {
 
     //Instance variables
-    private Long id;
-    private Long user_id;
+    private int id;
+    private int user_id;
     private String notification;
     private boolean is_read;
 
     //Getter and setters
-    public Long getId(){
+    public int getId(){
         return this.id;
     }
 
-    public Long getUserId(){
+    public int getUserId(){
         return this.user_id;
     }
 
@@ -25,11 +25,11 @@ public class Notifications {
         return this.is_read;
     }
 
-    public void setId(Long newId){
+    public void setId(int newId){
         this.id = newId;
     }
 
-    public void setUserId(Long newUserId){
+    public void setUserId(int newUserId){
         this.user_id = newUserId;
     }
 
