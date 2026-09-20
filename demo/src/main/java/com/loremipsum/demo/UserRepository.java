@@ -42,7 +42,7 @@ public class UserRepository {
     //finding a user by username
     public User findByUsername(String username){
 
-        String sql = "SELECT * FROM users WHERE useername = ?";
+        String sql = "SELECT * FROM users WHERE username = ?";
          
         try{
             

@@ -1,9 +1,9 @@
 package com.loremipsum.demo;
 
 public class LoginRequest {
-    private String email;
+    private String mail;
     private String password;
 
     public String getPassword() { return password; }
-    public String getEmail() { return email; } 
+    public String getMail() { return mail; } 
 }
