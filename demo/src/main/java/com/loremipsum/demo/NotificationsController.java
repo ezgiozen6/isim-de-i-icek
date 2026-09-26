@@ -62,7 +62,7 @@ public class NotificationsController {
 
         jdbcTemplate.update(sql, update.getIsRead(), id);
 
-        return "Updated read situation successfully";
+        return "Updated read situation";
     }
 
     @PostMapping("/api/notifications")

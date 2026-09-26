@@ -63,7 +63,7 @@ public class BlogController {
     public String delete(@PathVariable int id){
         String sql = "DELETE FROM blogs WHERE id = ?";
         jdbcTemplate.update(sql, id);
-        return "deleted blog";
+        return "Deleted blog";
     }
 
     //users may need to update the content o yüzden ekledim 
@@ -71,7 +71,7 @@ public class BlogController {
     public String update(@PathVariable int id, @RequestBody Blog updatedBlog){
         String sql = "UPDATE blogs SET content = ?, date = ? WHERE id = ?";
         jdbcTemplate.update(sql, updatedBlog.getContent(), updatedBlog.getDate(), id);
-        return "blog updated";
+        return "Blog updated";
     }
 
 }

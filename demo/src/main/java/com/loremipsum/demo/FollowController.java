@@ -49,7 +49,7 @@ public class FollowController {
         String sql = "SELECT * FROM follows WHERE followed_id = ? AND follower_id = ?";
 
         if(newFollow.getFollowedId()==(newFollow.getFollowerId())){
-            return "cant follow urself";
+            return "can't follow yourself";
         }
 
         List<Follow> queryList = jdbcTemplate.query(sql, (resultset, rownum) -> {

@@ -28,7 +28,7 @@ public class UserController {
         this.jwtUtil= aJwtUtil;
     }
 
-    @PostMapping("api/auth/register")
+    @PostMapping("/api/auth/register")
     public ResponseEntity<?> register(@RequestBody RegisterRequest request){
         String result = authService.signUp(request.getMail(), request.getUsername(), request.getPassword(), request.getConfirmPassword());
 
@@ -40,7 +40,7 @@ public class UserController {
     }
 
 
-    @PostMapping("api/auth/login")
+    @PostMapping("/api/auth/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest request){
         String result = authService.login(request.getMail(), request.getPassword());
 
@@ -76,14 +76,18 @@ public class UserController {
         });
     }
 
+    //
     @GetMapping("/api/users/{id}")
     public User getUserById(@PathVariable int id){
-        String getUserSql = "SELECT id, mail FROM users WHERE id = ?";
+        String getUserSql = "SELECT * FROM users WHERE id = ?";
 
-        List<User> resultUser = jdbcTemplate.query(getUserSql, (resultset, rownum) ->{
+        List<User> resultUser = jdbcTemplate.query(getUserSql, (rs, rownum) ->{
             User user = new User();
-            user.setId(resultset.getInt("id"));
-            user.setMail(resultset.getString("mail"));
+            user.setId(rs.getInt("id"));
+            user.setMail(rs.getString("mail"));
+            user.setUsername(rs.getString("username"));
+            user.setPassword(rs.getString("password"));
+            user.setCreatedAt(rs.getDate("created_at"));
             return user;
         }, id);
 
@@ -91,13 +95,24 @@ public class UserController {
         else{return resultUser.get(0);}
     }
 
-    //Creating a user
-    @PostMapping("/api/users")
-    public String createUser(@RequestBody User newUser){
-        String sql = "INSERT INTO users (mail, password) VALUES (?,?)";
-        jdbcTemplate.update(sql, newUser.getMail(), "temporary_placeholder");
-        return "User created";
+    @GetMapping("/api/users/username/{username}")
+    public User getUserByUsername(@PathVariable String username){
+        String getUserSql = "SELECT * FROM users WHERE username = ?";
+
+        List<User> resultUser = jdbcTemplate.query(getUserSql, (rs, rownum) ->{
+            User user = new User();
+            user.setId(rs.getInt("id"));
+            user.setMail(rs.getString("mail"));
+            user.setUsername(rs.getString("username"));
+            user.setPassword(rs.getString("password"));
+            user.setCreatedAt(rs.getDate("created_at"));
+            return user;
+        }, username);
+
+        if(resultUser.isEmpty()){return null;}
+        else{return resultUser.get(0);}
     }
+
 
     @DeleteMapping("/api/users/{id}")
     public String deleteUser(@PathVariable int id){

@@ -19,5 +19,73 @@
                 </span>
             </div>
         </nav>
+
+        <section class="profile-header">
+            <div class="profile-left">
+                <img id="profile-avatar" src="images/kemal.jpg.png" alt="Profile Picture"/>
+            </div>
+            <div class="profile-right">
+                <h2 id="profile-name">Loading...</h2>
+                <!--<p id="profile-bio">&nbsp;</p>-->
+                <div class="profile-stats">
+                    <span><strong id="stat-posts">0</strong> Posts</span>
+                    <span><strong id="stat-followers">0</strong> Followers</span>
+                    <span><strong id="stat-following">0</strong> Following</span>
+                </div>
+                <button class="get-started" id="edit-profile-btn">Edit Profile</button>
+            </div>
+        </section>
+
+        <p id="profile-error" class="centered-text" style="color:#A86887; display:none;">
+            Couldn't load your profile right now. Please try again later.
+        </p>
+
+        <script src="js/UserApi.js"></script>
+        <script>
+            // Page-specific logic only — all fetch/auth details live in js/api.js.
+            async function loadProfile() {
+                let userId;
+                try {
+                    userId = getCurrentUserId();
+                } catch {
+                    document.getElementById("profile-name").textContent = "Not logged in";
+                    document.getElementById("profile-error").style.display = "block";
+                    return;
+                }
+
+                try {
+                    const user = await getUser(userId);
+                    document.getElementById("profile-name").textContent = user.username || "Unnamed User";
+                    // User.java has no bio field yet, so we show join date instead.
+                    // Add a "bio" column + getter/setter to User.java if you want a real bio here.
+                    document.getElementById("profile-bio").textContent = user.createdAt
+                        ? `Member since ${new Date(user.createdAt).toLocaleDateString()}`
+                        : "";
+                    // No avatarUrl field on User yet either — keeping the default placeholder image.
+
+                    const [followers, following, posts] = await Promise.all([
+                        getFollowerCount(userId),
+                        getFollowingCount(userId),
+                        getPostCountForUser(userId)
+                    ]);
+
+                    document.getElementById("stat-followers").textContent = followers;
+                    document.getElementById("stat-following").textContent = following;
+                    document.getElementById("stat-posts").textContent = posts;
+
+                } catch (err) {
+                    console.error("Failed to load profile:", err);
+                    document.getElementById("profile-name").textContent = "Unable to load profile";
+                    document.getElementById("profile-error").style.display = "block";
+                }
+            }
+
+            document.getElementById("edit-profile-btn").addEventListener("click", () => {
+                // Hook this up to your edit-profile page/modal.
+                window.location.href = "edit-profile.html";
+            });
+
+            document.addEventListener("DOMContentLoaded", loadProfile);
+        </script>
     </body>
 </html>

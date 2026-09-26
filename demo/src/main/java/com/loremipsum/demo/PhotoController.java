@@ -59,7 +59,7 @@ public class PhotoController {
         String sql = "INSERT INTO photos (user_id, url, date) VALUES (?, ?, ?)";
 
         jdbcTemplate.update(sql, thePhoto.getUserId(), thePhoto.getUrl(), thePhoto.getDate());
-        return "yay u created photo";
+        return "Photo created";
     }
 
     @DeleteMapping("/api/photos/{id}")
@@ -67,7 +67,7 @@ public class PhotoController {
         String sql = "DELETE FROM photos WHERE id = ?";
 
         jdbcTemplate.update(sql, id);
-        return "deleted photo";
+        return "Photo deleted";
     }
     
 }
