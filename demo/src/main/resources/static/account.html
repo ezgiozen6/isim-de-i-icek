@@ -3,6 +3,7 @@
     <head>
         <title>Main Page</title>
         <link rel="stylesheet" href="css/style.css">
+        <script src="jssrc/UserApi.js"></script>
     </head>
     <body>
         <nav class="navbar">
@@ -26,7 +27,7 @@
             </div>
             <div class="profile-right">
                 <h2 id="profile-name">Loading...</h2>
-                <!--<p id="profile-bio">&nbsp;</p>-->
+                <p id="profile-bio">&nbsp;</p>
                 <div class="profile-stats">
                     <span><strong id="stat-posts">0</strong> Posts</span>
                     <span><strong id="stat-followers">0</strong> Followers</span>
@@ -40,7 +41,7 @@
             Couldn't load your profile right now. Please try again later.
         </p>
 
-        <script src="js/UserApi.js"></script>
+       
         <script>
             // Page-specific logic only — all fetch/auth details live in js/api.js.
             async function loadProfile() {

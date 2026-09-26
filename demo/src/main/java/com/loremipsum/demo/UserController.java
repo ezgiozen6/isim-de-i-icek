@@ -59,19 +59,23 @@ public class UserController {
             
             return ResponseEntity.ok(response);
         } else {
-            return ResponseEntity.status(401).body(Map.of("error", "Invalid credentials"));
+            return ResponseEntity.status(401).body(Map.of("error", result));
+
         }
 
     }
 
     @GetMapping("/api/users")
     public List<User> getAllUsers(){
-        String userSql = "SELECT id, mail FROM users";
+        String userSql = "SELECT * FROM users";
 
-        return jdbcTemplate.query(userSql, (resultset, rowNum) -> {
+        return jdbcTemplate.query(userSql, (rs, rowNum) -> {
             User user = new User();
-            user.setId(resultset.getInt("id"));
-            user.setMail(resultset.getString("mail"));
+            user.setId(rs.getInt("id"));
+            user.setMail(rs.getString("mail"));
+            user.setUsername(rs.getString("username"));
+            user.setPassword(rs.getString("password"));
+            user.setCreatedAt(rs.getDate("created_at"));
             return user;
         });
     }
